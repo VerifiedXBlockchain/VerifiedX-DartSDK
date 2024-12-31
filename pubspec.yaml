@@ -3,6 +3,7 @@ description: VerifiedX (VFX) Dart SDK for generating and managing keypairs.
 version: 1.0.0
 repository: https://github.com/VerifiedXBlockchain/VerifiedX-DartSDK
 homepage: https://verifiedx.io
+license: MIT
 
 environment:
   sdk: ^3.5.3
