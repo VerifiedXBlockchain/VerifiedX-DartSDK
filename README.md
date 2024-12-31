@@ -1,3 +1,4 @@
+# vfx_dart
 <!-- 
 This README describes the package. If you publish this package to pub.dev,
 this README's contents appear on the landing page for your package.
@@ -11,7 +12,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages). 
 -->
 
-TODO: VerifiedX (VFX) Dart SDK for generating and managing keypairs.
+VerifiedX (VFX) Dart SDK for generating and managing keypairs.
 
 ## Features
 
