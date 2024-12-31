@@ -11,29 +11,31 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+TODO: VerifiedX (VFX) Dart SDK for generating and managing keypairs.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Generate secure random keypair
+- Convert private keys to addresses (Mainnet and Testnet supported)
+- Generate and recover with mnemonics
+- Generate keypair with email & password
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+dart pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
 
 ```dart
-const like = 'sample';
+final keypairService = KeypairService(isTestnet: true);
+final keypair = keypairService.keypairFromEmailAndPassword("dev@verifiedx.io", "tokenized");
+
+print(keypair);
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+All public and private APIs must have test coverage.
