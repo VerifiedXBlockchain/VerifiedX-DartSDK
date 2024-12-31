@@ -1,20 +1,20 @@
 name: vfx_dart
-description: A starting point for Dart libraries or applications.
+description: VerifiedX (VFX) Dart SDK for generating and managing keypairs.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/VerifiedXBlockchain/VerifiedX-DartSDK
+homepage: https://verifiedx.io
 
 environment:
   sdk: ^3.5.3
 
-# Add regular dependencies here.
 dependencies:
   base58check: ^2.0.0
   bip32: ^2.0.0
   bip39: ^1.0.6
   convert: ^3.1.2
   crypto: ^3.0.6
+  hex: ^0.2.0
   pointycastle: ^3.9.1
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^4.0.0

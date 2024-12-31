@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters
+
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -293,11 +295,11 @@ class ExtendedPrivateKey extends ExtendedKey {
 
   ExtendedPrivateKey({
     this.key,
-    int? depth,
-    int? childNumber,
-    Uint8List? chainCode,
-    Uint8List? parentFingerprint,
-  }) : super(version: privateKeyVersion, depth: depth, childNumber: childNumber, parentFingerprint: parentFingerprint, chainCode: chainCode);
+    super.depth,
+    super.childNumber,
+    super.chainCode,
+    super.parentFingerprint,
+  }) : super(version: privateKeyVersion);
 
   ExtendedPrivateKey.master(Uint8List seed) : super(version: privateKeyVersion) {
     var hash = hmacSha512(masterKey, seed);
