@@ -1,17 +1,15 @@
 import 'package:vfx_dart/src/keypair_model.dart';
 import 'package:vfx_dart/src/keypair_utils.dart';
 
-class KeypairService {
-  // ** KEYPAIR GENERATORS **
-
+class BitcoinKeypairService {
   final bool isTestnet;
 
-  const KeypairService({this.isTestnet = false});
+  const BitcoinKeypairService({this.isTestnet = false});
 
   Keypair keypairFromPrivateKey(String privateKey, {String? mnemonic}) {
     final publicKey = KeypairUtils.publicFromPrivate(privateKey);
     final address =
-        KeypairUtils.addressFromPrivate(privateKey, isTestnet: isTestnet);
+        KeypairUtils.bitcoinAddressFromPrivate(privateKey, isTestnet: isTestnet);
 
     return Keypair(
       privateKey: privateKey,
@@ -32,15 +30,15 @@ class KeypairService {
     return keypairFromPrivateKey(privateKey);
   }
 
-  Keypair keypairFromRestoredMnemonic(String mnemonic, {int nonce = 0}) {
-    final privateKey = KeypairUtils.privateKeyFromMnemonic(mnemonic, nonce);
+  Keypair keypairFromRestoredMnemonic(String mnemonic, {int index = 0}) {
+    final privateKey = KeypairUtils.bitcoinPrivateKeyFromMnemonic(mnemonic, index);
     return keypairFromPrivateKey(privateKey, mnemonic: mnemonic);
   }
 
   Keypair keypairFromGeneratedMnemonic(
-      {required int words, int nonce = 0, bool isTestnet = false}) {
+      {required int words, int index = 0}) {
     final mnemonic = KeypairUtils.generateMnemonic(words: words);
-    final privateKey = KeypairUtils.privateKeyFromMnemonic(mnemonic, nonce);
+    final privateKey = KeypairUtils.bitcoinPrivateKeyFromMnemonic(mnemonic, index);
     return keypairFromPrivateKey(privateKey, mnemonic: mnemonic);
   }
 }
